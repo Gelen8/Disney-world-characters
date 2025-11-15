@@ -1,0 +1,14 @@
+.panel {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
+  justify-content: center;
+  grid-gap: 20px 18px;
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}

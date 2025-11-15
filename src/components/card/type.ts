@@ -1,4 +1,5 @@
 export type TCard = {
+    id?: string;
     image: string;
-    description: string;
+    title: string;
 }
