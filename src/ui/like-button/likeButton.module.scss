@@ -10,32 +10,24 @@
   width: 24px;
   height: 24px;
   transition: transform 0.1s ease, color 0.2s ease;
-  color: var(--main-color-text);
+  color: rgb(36, 1, 59);
 
   &.liked {
-    color: var(--accent-color);
+    color: rgb(36, 1, 59);
 
     &:hover {
-      color: var(--accent-color-light);
+      color: rgb(80, 2, 132);
     }
   }
 
    /* stylelint-disable-next-line no-duplicate-selectors */
   
    &:hover {
-    color: var(--tertiary-color-dark);
     transform: scale(1.1);
   }
 
   &:active {
     transform: scale(0.95);
-  }
-
-  &:disabled {
-    pointer-events: none;
-    color: var(--tertiary-color-dark);
-    opacity: 0.5;
-    transform: none;
   }
 }
 

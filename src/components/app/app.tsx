@@ -3,8 +3,17 @@ import MainPage from '../../pages/main-page/MainPage';
 import styles from './app.module.scss'
 import AppHeader from '../app-header/app-header';
 import ProductsPage from '../../pages/products-page/ProductsPage';
+import { useDispatch } from '../../services/store';
+import { useEffect } from 'react';
+import { loadNews } from '../../services/newsSlice';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadNews())
+  }, []);
+
   return (
     <div className={styles.app}>
       <AppHeader />

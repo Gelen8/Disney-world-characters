@@ -4,10 +4,7 @@ import { ReactComponent as EmptyLike } from '../../assets/icons/like.svg';
 import styles from './likeButton.module.scss';
 
 
-export const LikeButton = ({ liked,
-  onClick,
-  isActive =  false
-}: LikeButtonProps) => {
+export const LikeButton = ({ liked, onClick, }: LikeButtonProps) => {
   
   return (
     <button 
