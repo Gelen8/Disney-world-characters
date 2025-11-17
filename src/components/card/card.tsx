@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ReactComponent as Basket } from '../../assets/icons/basket.svg';
 import { TCardProps } from './types';
 import { useDispatch, useSelector } from '../../services/store';
-import { removeItem, selectItemById, selectLiked, toggleLike } from '../../services/newsSlice';
+import { removeItem, selectItemById, selectLiked, toggleLike } from '../../services/disneySlice';
 
 const Card = ({title, image, id}: TCardProps) => {
   const dispatch = useDispatch();

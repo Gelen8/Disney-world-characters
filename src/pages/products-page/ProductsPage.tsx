@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
 import Card from "../../components/card/card";
 import styles from './productsPage.module.scss';
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useCallback, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "../../services/store";
-import { removeItem, selectLiked, selectNews, selectNewsLoading } from "../../services/newsSlice";
-import { TCard } from "../../utils/types";
+import { selectLiked, selectNews, selectNewsLoading } from "../../services/disneySlice";
 
 const ProductsPage = () => {
   const [show, setShow] = useState('all');
 
-  const onValueChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onValueChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setShow(e.target.value)
-  };
-  const dispatch = useDispatch();
+  }, []);
 
   const isLoading = useSelector(selectNewsLoading);
-  const allCards: TCard[] = useSelector(selectNews);
+  const allCards = useSelector(selectNews);
   const favoriteCards = useSelector(selectLiked);
 
-  const showCards = show === 'all' ? allCards : favoriteCards;
+  const showCards = useMemo(() => {
+    return show === 'all' ? allCards : favoriteCards;
+  }, [show, allCards, favoriteCards])
 
   return (
     <section>
