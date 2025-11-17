@@ -24,7 +24,7 @@ export const getCharactersApi = () => {
 };
 
 export const getCharacterByIdApi = (id: number) => {
-  return fetch(`https://api.disneyapi.dev/character${id}`)
+  return fetch(`https://api.disneyapi.dev/character/${id}`)
     .then((res) => checkResponse<TServerResponse<TCharacterResponse>>(res))
     .then((data) => {
       return data.data;

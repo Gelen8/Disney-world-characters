@@ -1,4 +1,4 @@
 export interface LikeButtonProps {
   liked: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
 }

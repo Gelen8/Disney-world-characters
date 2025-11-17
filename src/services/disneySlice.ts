@@ -47,6 +47,7 @@ export const disneySlice = createSlice({
   },
   selectors: {
     selectNews: (state) => state.characters,
+    getSelectedcard: (state) => state.selectedCard,
     selectNewsLoading: (state) => state.loading,
     selectNewsError: (state) => state.error,
   },
@@ -65,6 +66,9 @@ export const disneySlice = createSlice({
         state.loading = false;
         state.error = action.error?.message || 'Ошибка загрузки'    
       })
+      .addCase(loadCharacterById.pending, (state) => {
+        state.selectedCard = null;
+      })
       .addCase(loadCharacterById.fulfilled, (state, action) => {
         state.selectedCard = action.payload;
         state.error = null;
@@ -79,6 +83,7 @@ export const newsReducer = disneySlice.reducer;
 
 export const {
   selectNews,
+  getSelectedcard,
   selectNewsLoading,
   selectNewsError
 } = disneySlice.selectors;
