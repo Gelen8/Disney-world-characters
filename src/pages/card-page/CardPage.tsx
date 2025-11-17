@@ -20,7 +20,7 @@ const CardPage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div className={styles.card}>
         <img className={styles.cardImage} src={card.imageUrl} alt={card.name}/>
         <div className={styles.cardDescription}>
@@ -42,7 +42,7 @@ const CardPage = () => {
           <button className={styles.button} onClick={() => navigate(-1)}>К списку персонажей</button>
         </div>
       </div>
-    </div>
+    </main>
   )
 };
 

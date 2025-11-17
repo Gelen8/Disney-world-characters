@@ -21,7 +21,7 @@ const ProductsPage = () => {
   }, [show, allCards, favoriteCards])
 
   return (
-    <section>
+    <main>
       <div className={styles.panel}>
         <div>
           <span>Показать:</span>
@@ -44,14 +44,14 @@ const ProductsPage = () => {
             понравившиеся новости
           </label>
         </div>
-        <Link to='/create- product'>Создаить новость</Link>
+        <Link to='/create-product'>Создаить новость</Link>
       </div>
       <ul className={styles.cards}>
         {isLoading ? (<div>Loading...</div>) : (showCards.map((card) => (
           <Card key={card._id} id={card._id} image={card.imageUrl} title={card.name}></Card>
         )))}
       </ul>
-    </section>
+    </main>
   )
 };
 

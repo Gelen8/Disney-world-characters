@@ -7,6 +7,7 @@ import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';
 import { loadCharacters } from '../../services/disneySlice';
 import CardPage from '../../pages/card-page/CardPage';
+import CreatePage from '../../pages/create-page/CreatePage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const App = () => {
         <Route path='/' element={<MainPage />}></Route>
         <Route path='/products' element={<ProductsPage />}></Route>
         <Route path='/products/:id' element={<CardPage />}></Route>
-        <Route path='/create- product' element={<ProductsPage />}></Route>
+        <Route path='/create-product' element={<CreatePage />}></Route>
       </Routes>
     </div>
   )
