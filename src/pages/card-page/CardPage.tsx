@@ -1,50 +1,47 @@
-import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "../../services/store";
-import { getSelectedcard, loadCharacterById, selectItemById, selectNews } from "../../services/disneySlice";
-import styles from './cardPage.module.scss';
+import { useNavigate, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from '../../services/store'
+import { selectItemById } from '../../services/disneySlice'
+import styles from './cardPage.module.scss'
 
 const CardPage = () => {
-  const { id } = useParams();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+	const { id } = useParams()
+	const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   dispatch(loadCharacterById(Number(id)))
-  // }, [id])
-  const allCharacters = useSelector(selectNews);
-  console.log('Все персонажи:', allCharacters);
-  const card = useSelector((state) => selectItemById(state, Number(id)));
+	// useEffect(() => {
+	//   dispatch(loadCharacterById(Number(id)))
+	// }, [id])
 
-  if (!card) {
-    return (<div>Loading...</div>)
-  };
+	const card = useSelector((state) => selectItemById(state, Number(id)))
 
-  return (
-    <main className={styles.container}>
-      <div className={styles.card}>
-        <img className={styles.cardImage} src={card.imageUrl} alt={card.name}/>
-        <div className={styles.cardDescription}>
-          <div className={styles.cardInfo}>
-            <h2>{card.name}</h2>
-            {card.films.length > 0 && (
-              <h3>Фильмы: {card.films.join(', ')}</h3>
-            )}
-            {card.tvShows.length > 0 && (
-              <h3>ТВ-шоу: {card.tvShows.join(', ')}</h3>
-            )}
-            {card.parkAttractions.length > 0 && (
-              <h3>Парки атракционов: {card.parkAttractions.join(', ')}</h3>
-            )}
-            {card.videoGames.length > 0 && (
-              <h3>Парки атракционов: {card.videoGames.join(', ')}</h3>
-            )}
-          </div>
-          <button className={styles.button} onClick={() => navigate(-1)}>К списку персонажей</button>
-        </div>
-      </div>
-    </main>
-  )
-};
+	if (!card) {
+		return <div>Loading...</div>
+	}
 
-export default CardPage;
+	return (
+		<main className={styles.container}>
+			<div className={styles.card}>
+				<img className={styles.cardImage} src={card.imageUrl} alt={card.name} />
+				<div className={styles.cardDescription}>
+					<div className={styles.cardInfo}>
+						<h2>{card.name}</h2>
+						{card.films.length > 0 && <h3>Фильмы: {card.films.join(', ')}</h3>}
+						{card.tvShows.length > 0 && (
+							<h3>ТВ-шоу: {card.tvShows.join(', ')}</h3>
+						)}
+						{card.parkAttractions.length > 0 && (
+							<h3>Парки атракционов: {card.parkAttractions.join(', ')}</h3>
+						)}
+						{card.videoGames.length > 0 && (
+							<h3>Парки атракционов: {card.videoGames.join(', ')}</h3>
+						)}
+					</div>
+					<button className={styles.button} onClick={() => navigate(-1)}>
+						К списку персонажей
+					</button>
+				</div>
+			</div>
+		</main>
+	)
+}
+
+export default CardPage

@@ -1,38 +1,38 @@
 .likeButton {
-  display: inline-flex;    
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  margin: 0;
-  padding: 0;
-  color: rgb(36 1 59);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.1s ease, color 0.2s ease;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	color: rgb(36 1 59);
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition:
+		transform 0.1s ease,
+		color 0.2s ease;
 
-  &.liked {
-    color: rgb(36 1 59);
+	&__liked {
+		color: rgb(36 1 59);
 
-    &:hover {
-      color: rgb(80 2 132);
-    }
-  }
+		&:hover {
+			color: rgb(80 2 132);
+		}
+	}
 
-   /* stylelint-disable-next-line no-duplicate-selectors */
-  
-   &:hover {
-    transform: scale(1.1);
-  }
+	&:hover {
+		transform: scale(1.1);
+	}
 
-  &:active {
-    transform: scale(0.95);
-  }
+	&:active {
+		transform: scale(0.95);
+	}
 }
 
 .heart {
-  display: block;
-  width: 100%;
-  height: 100%;
+	display: block;
+	width: 100%;
+	height: 100%;
 }

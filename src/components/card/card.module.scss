@@ -1,46 +1,42 @@
 .link {
-  text-decoration: none;
-  cursor: pointer;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .card {
-  overflow: hidden;
-  background-color: aliceblue;
-  border-radius: 10px;
+	overflow: hidden;
+	background-color: aliceblue;
+	border-radius: 10px;
 
-  &__image {
-    width: 100%;
-    height: 282px;
-    object-fit: cover;
-  }
+	&__image {
+		width: 100%;
+		height: 282px;
+		object-fit: cover;
+	}
 
-  &__image:hover {
-    cursor: pointer;
-  }
+	&__description {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 5px;
+		padding: 5px;
+	}
 
-  &__description {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-  }
+	&__title {
+		max-width: 220px;
+		margin: 0;
+		overflow: hidden;
+		font-size: 24px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
 
-  &__title {
-    max-width: 220px;
-    margin: 0;
-    overflow: hidden;
-    font-size: 24px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  &__buttons {
-    display: flex;
-    gap: 5px;
-  }
+	&__buttons {
+		display: flex;
+		gap: 5px;
+	}
 }
 
 .basket {
-  cursor: pointer;
+	cursor: pointer;
 }

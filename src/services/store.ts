@@ -1,22 +1,22 @@
-import { combineSlices, configureStore } from "@reduxjs/toolkit";
-import { disneySlice } from "./disneySlice";
-import type { TypedUseSelectorHook } from 'react-redux';
+import { combineSlices, configureStore } from '@reduxjs/toolkit'
+import { disneySlice } from './disneySlice'
+import type { TypedUseSelectorHook } from 'react-redux'
 import {
-  useDispatch as dispatchHook,
-  useSelector as selectorHook
-} from 'react-redux';
+	useDispatch as dispatchHook,
+	useSelector as selectorHook,
+} from 'react-redux'
 
-export const rootReducer = combineSlices(disneySlice);
+export const rootReducer = combineSlices(disneySlice)
 
 const store = configureStore({
-    reducer: rootReducer,
-    devTools: process.env.NODE_ENV !== 'production'
-});
+	reducer: rootReducer,
+	devTools: process.env.NODE_ENV !== 'production',
+})
 
-export type RootState = ReturnType<typeof rootReducer>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof rootReducer>
+export type AppDispatch = typeof store.dispatch
 
-export const useDispatch: () => AppDispatch = () => dispatchHook();
-export const useSelector: TypedUseSelectorHook<RootState> = selectorHook;
+export const useDispatch: () => AppDispatch = () => dispatchHook()
+export const useSelector: TypedUseSelectorHook<RootState> = selectorHook
 
-export default store;
+export default store

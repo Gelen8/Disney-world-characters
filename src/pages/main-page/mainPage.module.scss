@@ -1,27 +1,27 @@
 .main {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 
-  &__button {
-    padding: 12px 24px;
-    background-color: #3f357d;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Jost', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+	&__button {
+		padding: 12px 24px;
+		color: white;
+		font-weight: 500;
+		font-size: 1rem;
+		font-family: 'Jost', sans-serif;
+		background-color: #3f357d;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
 
-    &__button:hover {
-      background-color: #765acb;
-    }
-  }
+		&:hover {
+			background-color: #765acb;
+		}
+	}
 }

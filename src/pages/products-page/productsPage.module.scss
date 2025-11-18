@@ -1,39 +1,39 @@
 .panel {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 
-    &__filter {
-      display: flex;
-      gap: 8px;
-      font-size: 20px;
-      font-weight: 600;
-    }
+	&__filter {
+		display: flex;
+		gap: 8px;
+		font-weight: 600;
+		font-size: 20px;
+	}
 
-    &__button {
-      padding: 12px 24px;
-      background-color: #3f357d;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-family: 'Jost', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
+	&__button {
+		padding: 12px 24px;
+		color: white;
+		font-weight: 500;
+		font-size: 1rem;
+		font-family: 'Jost', sans-serif;
+		background-color: #3f357d;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
 
-    &__button:hover {
-      background-color: #765acb;
-    }
+		&:hover {
+			background-color: #765acb;
+		}
+	}
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 350px);
-  justify-content: center;
-  gap: 20px 18px;
-  margin: 20px 0;
-  padding: 0;
-  list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 350px);
+	justify-content: center;
+	gap: 20px 18px;
+	margin: 20px 0;
+	padding: 0;
+	list-style-type: none;
 }
