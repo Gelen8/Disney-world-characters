@@ -1,22 +1,26 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex: 1;
+.main {
+  margin: 0 auto;
 }
 
-.form {
-  max-width: 500px;
-  margin: 0 auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #58beea;
   border-radius: 8px;
   background-color: aliceblue;
 }
 
-.field {
-  margin-bottom: 16px;
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 15px;
+  width: 500px;
 }
 
 .label {
@@ -45,13 +49,16 @@
 }
 
 .button {
+  padding: 12px 24px;
   background-color: #3f357d;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Jost', sans-serif;
   font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .button:hover {

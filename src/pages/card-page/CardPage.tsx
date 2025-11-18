@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "../../services/store";
-import { getSelectedcard, loadCharacterById } from "../../services/disneySlice";
+import { getSelectedcard, loadCharacterById, selectItemById, selectNews } from "../../services/disneySlice";
 import styles from './cardPage.module.scss';
 
 const CardPage = () => {
@@ -9,11 +9,12 @@ const CardPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    dispatch(loadCharacterById(Number(id)))
-  }, [id])
-
-  const card = useSelector(getSelectedcard);
+  // useEffect(() => {
+  //   dispatch(loadCharacterById(Number(id)))
+  // }, [id])
+  const allCharacters = useSelector(selectNews);
+  console.log('Все персонажи:', allCharacters);
+  const card = useSelector((state) => selectItemById(state, Number(id)));
 
   if (!card) {
     return (<div>Loading...</div>)

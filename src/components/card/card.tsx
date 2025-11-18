@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({title, image, id}: TCardProps) => {
   const dispatch = useDispatch();
-  const currentCard = useSelector((state) => selectItemById(state, String(id)));
+  const currentCard = useSelector((state) => selectItemById(state, Number(id)));
 
   const isLike = currentCard?.liked || false;
 

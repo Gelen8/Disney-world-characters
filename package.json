@@ -58,10 +58,12 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.10.1",
+    "formik": "^2.4.9",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.6",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "yup": "^1.7.1"
   }
 }

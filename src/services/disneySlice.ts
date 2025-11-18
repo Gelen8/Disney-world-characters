@@ -38,7 +38,7 @@ export const disneySlice = createSlice({
       state.characters = state.characters.filter((item) => item._id !== action.payload)
     },
     addItem: (state, action: PayloadAction<TCard>) => {
-      state.characters.push(action.payload)
+      state.characters.unshift(action.payload)
     },
     toggleLike: (state, action: PayloadAction<number>) => {
       const toggleCard = state.characters.find((item) => item._id === action.payload);
@@ -93,8 +93,8 @@ export const { removeItem, addItem, toggleLike } = disneySlice.actions;
 export const selectItemById = createSelector(
   disneySlice.selectors.selectNews,
   (_, id) => id,
-  (news: TCharacter[], id: string) =>
-    news.find((item) => String(item._id) === id)
+  (news: TCharacter[], id: number) =>
+    news.find((item) => item._id === id)
 );
 
 export const selectLiked = createSelector(

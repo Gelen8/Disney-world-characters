@@ -23,7 +23,7 @@ const ProductsPage = () => {
   return (
     <main>
       <div className={styles.panel}>
-        <div>
+        <div className={styles.panelFilter}>
           <span>Показать:</span>
           <label>
             <input
@@ -32,7 +32,7 @@ const ProductsPage = () => {
               checked={show === 'all'}
               onChange={onValueChange}
             />
-            все новости
+            Все персонажи
           </label>
           <label>
             <input
@@ -41,10 +41,12 @@ const ProductsPage = () => {
               checked={show === 'favorites'}
               onChange={onValueChange}
             />
-            понравившиеся новости
+            Избранное
           </label>
         </div>
-        <Link to='/create-product'>Создаить новость</Link>
+        <Link to='/create-product'>
+          <button className={styles.panelButton}>Создать персонажа</button>
+        </Link>
       </div>
       <ul className={styles.cards}>
         {isLoading ? (<div>Loading...</div>) : (showCards.map((card) => (

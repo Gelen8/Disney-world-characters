@@ -1,6 +1,6 @@
 export type TCard = {
   _id: number;
-  films: [];
+  films: string[];
   shortFilms: [];
   tvShows: [];
   videoGames: [];
