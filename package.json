@@ -1,6 +1,7 @@
 {
   "name": "spaceflight-news",
   "version": "1.0.0",
+  "homepage": "https://gelen8.github.io/Spaceflight-news",
   "description": "",
   "main": "index.js",
   "scripts": {
